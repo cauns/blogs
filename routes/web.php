@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Str;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 //FRONTEND
 Route::namespace('frontend')->name('frontend.')->group(function (){
     Route::get('/','HomeController@index')->name('home');
+    Route::get('/'.trans('global.link_categories').'/{slug}','CategoryController@index')->name('category');
+    Route::get('/'.trans('global.link_post').'/{slug}','PostController@index')->name('post');
 });
 
 
